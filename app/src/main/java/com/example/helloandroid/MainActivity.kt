@@ -1,4 +1,4 @@
-package com.example.helloandroid  // <-- keep YOUR package name
+package com.example.helloandroid
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -37,7 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.helloandroid.ui.theme.HelloAndroidTheme // <-- <ProjectName>Theme
+import com.example.helloandroid.ui.theme.HelloAndroidTheme
 
 private val DarkGreen = Color(0xFF205C2B)
 private val LightGreen = Color(0xFF91C140)
@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HelloAndroidTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = Color.White) {
-                    // Force left-to-right layout so "!" always appears after the name
+
                     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                         Greeter()
                     }
@@ -95,14 +95,14 @@ fun Greeter() {
 
         Box(Modifier.padding(8.dp))
 
-        // 2. Button: Greet me
+
         Button(
             onClick = {
-                // 4. Bonus: handle empty name
+
                 msg = if (name.isBlank()) {
                     "Please enter your name first."
                 } else {
-                    "Hello, ${name.trim()}!"          // 3. Hello, name!
+                    "Hello, ${name.trim()}!"
                 }
             },
             shape = RoundedCornerShape(12.dp),
@@ -119,7 +119,7 @@ fun Greeter() {
 
         Box(Modifier.padding(8.dp))
 
-        // 3. Greeting box (shown after the button is tapped)
+
         if (msg.isNotEmpty()) {
             Box(
                 modifier = Modifier
